@@ -1,6 +1,9 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import {stringifyQuery, parseQuery} from '../utils/query.js'
+
+
+const Home = ()=> import('../views/Home.vue') 
 
 Vue.use(VueRouter)
 
@@ -21,7 +24,9 @@ Vue.use(VueRouter)
 ]
 
 const router = new VueRouter({
-  routes
+  routes,
+  stringifyQuery,
+  parseQuery
 })
 
 export default router
